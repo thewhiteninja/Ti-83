@@ -1,0 +1,94 @@
+ClrDraw
+Menu("MENU:","1",1,"2",2,"3",3,"4",4,"5",5
+Lbl 1
+ZStandard
+Repeat A>A
+    For(C,14,44,7
+        randInt(1000,10000)->B
+        Text(C,32,B
+        Text(C,48,B
+    End
+End
+Stop
+Lbl 2
+ZStandard
+For(C,0,36
+    Text(C,25,"WHITE NINJA"
+End
+0->X
+For(C,87,44,_-1
+    Text(iPart(X),C,"DE"
+    X+.6->X
+End
+For(C,1,25
+    Text(14,C,"UN PROGRAMME"
+    Text(14,C-1," "
+End
+For(A,0,40,4
+    Text(45,47+A,"0"
+    Text(45,47-A,"0"
+End
+For(A,45,4,_-4
+    Text(A,7,"0"
+    Text(A,87,"0"
+End
+For(A,7,43,4
+    Text(4,A,"0"
+    Text(4,90-A,"0θ
+End
+Stop
+Lbl 3
+_-47->Xmin
+47->Xmax
+_-31->Ymin
+31->Ymax
+Line(_-41,5,41,5
+Line(41,5,41,_-5
+Line(41,_-5,_-41,_-5
+Line(_-41,_-5,_-41,5
+For(A,_-37,38
+    Line(A-2,4,A-2,_-4
+    Line(A-1,4,A-1,_-4
+    Line(A,4,A,_-4
+    Line(A+1,4,A+1,_-4
+    Line(A+2,4,A+2,_-4
+    Line(A-3,4,A-3,_-4,0
+End
+Stop
+Lbl 4
+_-47->Xmin
+47->Xmax
+31->Ymax
+_-31->Ymin
+For(A,0,20
+    Horizontal 0+A
+    Horizontal 0-A
+End
+Pause 
+Vertical 0
+Line(0,31,0,6,0
+Line(0,0,0,_-4,0
+Line(0,_-11,0,_-17,0
+Line(0,_-27,0,_-31,0
+For(A,1,43
+    Line(0-A,20,0-A,_-20,0
+    Line(0+A,20,0+A,_-20,0
+    Horizontal 10
+    Line(8,10,38,_-31
+    Line(_-8,10,_-38,_-31
+End
+Stop
+Lbl 5
+ZStandard
+For(A,10,_-10,_-0.3
+    Line(10,_-10,A,20
+End
+For(A,_-10,10,0.3
+    Line(_-10,10,A,_-20
+End
+10->X
+For(A,0,26,1
+    Text(A,X,"NINJA"
+    Text(A,X-1," "
+    X+1->X
+End

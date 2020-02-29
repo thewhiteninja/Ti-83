@@ -1,0 +1,74 @@
+FnOff 
+0->I
+CoordOff
+10->F
+AxesOff
+ExprOff
+ZStandard
+ClrDraw
+Horizontal _-10
+Horizontal 10
+Vertical _-10
+Vertical 10
+Text(25,6,"ENVIE DE TUER QUELQU UN ?"
+Pause 
+Menu("MENU","JOUER",C,"QUITTER",F)
+Lbl C
+0->θ
+ClrDraw
+1->X
+Lbl A
+ClrDraw
+randInt(_-10,10)->T
+Lbl 1
+While F<=_-10
+    ClrDraw
+    Disp "PERDU","SCORE :",I
+    Pause 
+    Stop
+End
+Pt-On(T,F,2)
+Pt-On(X,_-10,3
+getKey->K
+While K=0
+    randInt(1,20)->P
+    While P=4
+        Pt-Off(T,F,2
+        F-5->F
+        randInt(_-10,10)->T
+        Goto 1
+    End
+    getKey->K
+End
+While K!=26 and K!=24 and K!=21
+    Goto 1
+End
+While K=26
+    Pt-Off(X,_-10,3
+    X+1->X
+    Goto 1
+End
+While K=24
+    Pt-Off(X,_-10,3
+    X-1->X
+    Goto 1
+End
+While K=21
+    Line(X,0,X,8)
+    For(M,1,7,1)
+    End
+    Line(X,0,X,8,0)
+    While X=T
+        Pt-Off(T,G,2
+        I+1->I
+        Goto A
+    End
+    Goto 1
+End
+Lbl F
+CoordOn
+AxesOn
+ExprOn
+ClrDraw
+ClrHome
+Stop

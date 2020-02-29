@@ -1,0 +1,124 @@
+While K=14
+    ClrDraw
+    Text(26,39,"Perdu"
+    Pause 
+    0->A
+    Return
+End
+While K=12
+    ClrDraw
+    Text(26,39,"Bravo ! gagne"
+    Pause 
+    L->C
+    O+200->O
+    I+1->I
+    If I=5
+    Then
+        ClrDraw
+        Text(28,35,"Niveau sup !"
+        L+10->L
+        L->A
+        L->C
+        0->I
+        Return
+    Else
+        Return
+    End
+End
+While K=8
+    ClrDraw
+    Text(5,23,"Bienvenue au"
+    Text(20,20,"CENTRE POKEMON"
+    Pause 
+    While O>=100
+        10->T
+        10->θ
+        O-100->O
+        ClrDraw
+        Text(25,44,"Ok"
+        Pause 
+        Return
+    End
+    Text(35,13,"Vous avez pas assez"
+    Text(50,30,"au revoir"
+    Pause 
+    ClrDraw
+    Return
+End
+While K=1
+    {3,6}->dim([B]
+    Menu("Demarrer","New",4,"Bloc 1",1,"Bloc 2",2,"Bloc 3",3
+    Lbl 1
+    1->Q
+    Goto 5
+    Lbl 2
+    2->Q
+    Goto 5
+    Lbl 3
+    3->Q
+    Goto 5
+    Lbl 4
+    Return
+    Lbl 5
+    I->[B](Q,1)
+    L->[B](Q,2)
+    O->[B](Q,3)
+    W->[B](Q,4)
+    A->[B](Q,5)
+    C->[B](Q,6)
+    Return
+End
+While K=2
+    Menu("Sauver","Bloc 1",6,"Bloc 2",7,"Bloc 3",8,"Quit",9
+    Lbl 6
+    1->Q
+    Goto 10
+    Lbl 7
+    2->Q
+    Goto 10
+    Lbl 8
+    3->Q
+    Goto 10
+    Lbl 9
+    FnOn 
+    ClrDraw
+    AxesOn
+    ZStandard
+    Float
+    ClrHome
+    Stop
+    Lbl 10
+    [B](1,1)->I
+    [B](1,2)->L
+    [B](1,3)->O
+    [B](1,4)->W
+    [B](1,5)->A
+    [B](1,6)->C
+    Stop
+End
+While K=4
+    ClrDraw
+    Text(1,1,"Servez_-vous des boutons"
+    Text(9,1,"1 et 2 pour attaquer "
+    Text(17,1,"mais avant vous devai"
+    Text(25,1,"attendre votre tour !!
+    Text(33,1,"appuyez DEL pour fuire"
+    Text(41,1,"appuyez CLEAR pour"
+    Text(49,1,"utilisez les objets"
+    Pause 
+    Return
+End
+While K=6
+    Lbl A
+    ClrHome
+    Input "Hp ? ",A
+    Input "Hp totale ? ",L
+    While A>L or L=0 or A=0
+        Disp "Hp >,= Hp totale"
+        For(K,1,240
+        End
+        Goto A
+    End
+    L->C
+    Return
+End

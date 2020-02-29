@@ -1,0 +1,348 @@
+Fix 0
+AxesOff
+FnOff 
+100->L
+L->A
+10->θ
+10->T
+A->C
+1->W
+0->I
+0->O
+0->Xmin
+94->Xmax
+0->Ymin
+62->Ymax
+1->K
+prgmPOKE1
+Lbl A
+Menu("Menu :","Combattre",6,"Niveau",29,"Statut",2,"Achat",3,"Dormir",20,"Instructions",63,"Quit",7
+Lbl 63
+4->K
+prgmPOKE1
+Goto A
+Lbl 29
+6->K
+prgmPOKE1
+Goto A
+Lbl 20
+8->K
+prgmPOKE1
+Goto A
+Lbl 6
+ClrDraw
+RecallPic 1
+
+Text(1,79,L
+Lbl 1
+Text(1,2,A
+Text(1,61,C
+While C<=0
+    12->K
+    prgmPOKE1
+    Goto A
+End
+While A<=0
+    14->K
+    prgmPOKE1
+    Goto A
+End
+randInt(1,2)->Q
+While Q=1
+    randInt(1,3)->K
+    While K=3
+        For(E,1,11
+            Text(16,44,"Ah!  Ah!"
+        End
+        Text(16,44,"                       "
+        Text(1,2,"            "
+        Text(1,61,"            "
+        A-3->A
+        C+3->C
+        Goto 1
+    End
+    While K=1
+        For(E,1,11
+            Text(16,44,"Tonerre"
+        End
+        Text(16,44,"                                 "
+        For(D,1,2
+            For(E,1,2
+                Line(33,24,42,34
+                Line(42,34,36,36
+                Line(36,36,43,51
+                Line(43,51,50,50
+                Line(50,50,42,39
+                Line(42,39,48,35
+                Line(48,35,33,24
+            End
+            Line(33,24,42,34,0
+            Line(42,34,36,36,0
+            Line(36,36,43,51,0
+            Line(43,51,50,50,0
+            Line(50,50,42,39,0
+            Line(42,39,48,35,0
+            Line(48,35,33,24,0
+        End
+        A-10->A
+        Text(1,2,"            "
+        Goto 1
+    End
+    While K=2
+        For(E,1,11
+            Text(17,38,"Vampigraines"
+        End
+        Text(17,38,"                                                "
+        For(D,1,1
+            For(E,1,2
+                Line(33,19,43,33
+                Line(35,38,38,52
+                Line(14,45,3,50
+                Line(5,38,10,26
+                Line(35,13,45,9
+            End
+            Line(33,19,43,33,0
+            Line(35,38,38,52,0
+            Line(14,45,3,50,0
+            Line(5,38,10,26,0
+            Line(35,13,45,9,0
+        End
+        A-5->A
+        Text(1,2,"            "
+        Goto 1
+    End
+End
+While Q=2
+    randInt(1,2)->U
+    Text(1,37,"                  "
+    If U=1
+    Then
+        Text(1,37,θ
+        Text(1,47,T
+    Else
+        Text(1,47,T
+    End
+    Lbl 5
+    getKey->K
+    While K=105
+        Pause 
+        Goto 5
+    End
+    While K=23
+        randInt(1,2)->R
+        If R=1
+        Then
+            Text(25,22,"Vous avez fuis"
+            Pause 
+            Goto A
+        Else
+            Text(25,15,"Impossible de fuire !"
+            Pause 
+            Goto 6
+        End
+    End
+    While K=45
+        While W>=1
+            A+50->A
+            W-1->W
+            While A>L
+                L->A
+            End
+            ClrDraw
+            Text(25,43,"Ok"
+            Pause 
+            Goto 6
+        End
+        While W=0
+            ClrDraw
+            Text(28,3,"Il y a plus d objet en stock"
+            Pause 
+            Goto 6
+        End
+    End
+    While K=92
+        While U=2
+            Goto 5
+        End
+        θ-1->θ
+        While θ<=0
+            Goto 5
+        End
+        For(E,1,11
+            Text(12,42,"Super tonerre"
+        End
+        Text(12,42,"                                                "
+        For(D,1,2
+            For(E,1,3
+                Line(56,50,59,53
+                Line(59,53,70,41
+                Line(70,41,66,38
+                Line(66,38,70,29
+                Line(70,29,62,38
+                Line(62,38,64,41
+                Line(64,41,56,50
+            End
+            Line(56,50,59,53,0
+            Line(59,53,70,41,0
+            Line(70,41,66,38,0
+            Line(66,38,70,29,0
+            Line(70,29,62,38,0
+            Line(62,38,64,41,0
+            Line(64,41,56,50,0
+        End
+        C-10->C
+        Text(1,61,"           "
+        Goto 1
+    End
+    While K=93
+        T-1->T
+        While T<=0
+            Goto 4
+        End
+        For(E,1,11
+            Text(18,36,"Desintegration"
+        End
+        Text(18,36,"                                                        "
+        For(D,1,1
+            For(E,1,2
+                Line(53,23,60,32
+                Line(60,32,59,28
+                Line(59,28,64,26
+                Line(47,23,54,18
+                Line(54,18,53,13
+                Line(53,13,61,10
+                Line(93,10,88,6
+                Line(79,26,81,33
+                Line(81,33,86,32
+                Line(86,32,89,38
+            End
+            Line(53,23,60,32,0
+            Line(60,32,59,28,0
+            Line(59,28,64,26,0
+            Line(47,23,54,18,0
+            Line(54,18,53,13,0
+            Line(53,13,61,10,0
+            Line(93,10,88,6,0
+            Line(79,26,81,33,0
+            Line(81,33,86,32,0
+            Line(86,32,89,38,0
+        End
+        C-5->C
+        Text(1,61,"           "
+        Goto 1
+    End
+    While K>93
+        Goto 5
+    End
+    While K<92
+        Goto 5
+    End
+    Lbl 2
+    ClrDraw
+    Text(1,1,"Pikachu :"
+    Text(14,28,A
+    Text(14,42,"/"
+    Text(14,48,L
+    Text(14,15,"HP :"
+    Text(24,15,"Niveau :"
+    Text(24,46,L/10
+    Text(34,15,"Exp :"
+    Text(34,31,I*20
+    Text(44,15,"Argent :"
+    Text(44,43,O
+    Text(54,15,"Objet(s) :"
+    Text(54,51,W
+    Pause 
+    Goto A
+    Lbl 3
+    ClrHome
+    ClrDraw
+    Horizontal 0
+    Horizontal 62
+    Horizontal 53
+    Vertical 0
+    Vertical 94
+    Vertical 63
+    Text(2,70,"Prix"
+    Text(17,72,"100"
+    Text(32,72,"300"
+    Text(47,72,"500"
+    Text(17,15,"1 _- Potions"
+    Text(32,15,"2 _- Soins max"
+    Text(47,15,"3 _- Vie max"
+    Text(2,20,"Objets"
+    DispGraph
+    Lbl 52
+    getKey->K
+    While K=92
+        While A<=0
+            ClrDraw
+            Text(28,22,"Vous etes mort !"
+            Pause 
+            Goto A
+        End
+        If O>=100
+        Then
+            W+1->W
+            ClrDraw
+            Text(28,45,"Ok"
+            Pause 
+            Goto A
+        Else
+            ClrDraw
+            Text(26,18,"Vous avez pas assez"
+            Pause 
+            Goto A
+        End
+    End
+    While K=93
+        While A<=0
+            ClrDraw
+            Text(28,22,"Vous etes mort !"
+            Pause 
+            Goto A
+        End
+        If O>=300
+        Then
+            L->A
+            ClrDraw
+            Text(28,45,"Ok"
+            Pause 
+            Goto A
+        Else
+            ClrDraw
+            Text(22,18,"Vous avez pas assez"
+            Pause 
+            Goto A
+        End
+    End
+    While K=94
+        While A>0
+            ClrDraw
+            Text(28,22,"Pas encore mort"
+            Pause 
+            Goto A
+        End
+        If O>=500
+        Then
+            L->K
+            ClrDraw
+            Text(28,45,"Ok"
+            Pause 
+            Goto A
+        Else
+            ClrDraw
+            Text(28,37,"Vous avez pas assez"
+            Pause 
+            Goto A
+        End
+    End
+    While K<92
+        Goto 52
+    End
+    While K>94
+        Goto 52
+    End
+    Lbl 7
+    2->K
+    prgmPOKE1

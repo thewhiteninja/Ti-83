@@ -1,0 +1,10 @@
+Disp "SOMME ET PRODUIT"
+Prompt S,P
+Disp "CALCUL DE DELTA"
+Disp (S²-4P)
+Pause 
+(S²-4P)->D
+If D>0
+    Disp "CALCUL DE U ET V"
+If D>0
+    Disp (S-sqrt(D)/2>Frac,(S+sqrt(D)/2>Frac

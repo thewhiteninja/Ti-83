@@ -1,0 +1,16 @@
+Menu("SIMUL:","FRANCAIS",1,"ENGLISH",2
+Lbl 1
+ClrHome
+Output(2,1,"Vos piles"
+Output(3,1,"sont faibles. Il"
+Output(5,1,"est recommandé"
+Output(6,1,"de changer"
+Output(7,1,"vos piles."
+Stop
+Lbl 2
+ClrHome
+Output(2,1,"Your batteries"
+Output(3,1,"are low."
+Output(5,1,"Recommend"
+Output(6,1,"change of"
+Output(7,1,"batteries."

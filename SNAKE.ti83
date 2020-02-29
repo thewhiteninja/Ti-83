@@ -1,0 +1,39 @@
+AxesOff
+ZStandard
+0->D:0->E:2->B
+Lbl 1
+Pt-On(D,E,2
+getKey->A
+While A=24
+    1->B
+    Goto 2
+End
+While A=25
+    2->B
+    Goto 2
+End
+While A=26
+    3->B
+    Goto 2
+End
+While A=34
+    4->B
+    Goto 2
+End
+Lbl 2
+While B=1
+    D-1->D
+    Goto 1
+End
+While B=2
+    E+1->E
+    Goto 1
+End
+While B=3
+    D+1->D
+    Goto 1
+End
+While B=4
+    E-1->E
+    Goto 1
+End

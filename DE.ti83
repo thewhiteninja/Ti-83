@@ -1,0 +1,48 @@
+0->A:0->B:0->C:0->D:0->E:0->F
+Input "NB LANCE ? ",θ
+For(Z,0,θ-1
+    randInt(1,6)->Y
+    If Y=1
+    Then
+        A+1->A
+    Else
+        If Y=2
+        Then
+            B+1->B
+        Else
+            If Y=3
+            Then
+                C+1->C
+            Else
+                If Y=4
+                Then
+                    D+1->D
+                Else
+                    If Y=5
+                    Then
+                        E+1->E
+                    Else
+                        If Y=6
+                        Then
+                            F+1->F
+                        End
+                    End
+                End
+            End
+        End
+    End
+End
+ClrHome
+Output(1,1,"RESULTATS:"
+Output(3,1,"1 :"
+Output(4,1,"2 :"
+Output(5,1,"3 :"
+Output(6,1,"4 :"
+Output(7,1,"5 :"
+Output(8,1,"6 :"
+Output(3,5,A
+Output(4,5,B
+Output(5,5,C
+Output(6,5,D
+Output(7,5,E
+Output(8,5,F

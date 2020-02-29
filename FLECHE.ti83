@@ -1,0 +1,56 @@
+prgmPRESENT
+ClrDraw
+AxesOff
+_-47->Xmin
+_-31->Ymin
+47->Xmax
+31->Ymax
+RecallPic 0
+0->E:0->H:0->V
+Text(1,1,"H :"
+Text(10,1,"V :"
+randInt(_-30,30)->N
+randInt(_-30,30)->M
+Pt-On(N,M,2
+0->U
+Lbl 2
+While U=20
+    Goto R
+End
+Text(1,10,H
+Text(10,10,V
+getKey->E
+While E=24
+    H-1->H
+    Text(1,10,"          "
+    Goto 2
+End
+While E=25
+    V+1->V
+    Text(10,10,"         "
+    Goto 2
+End
+While E=26
+    H+1->H
+    Text(1,10,"           "
+    Goto 2
+End
+While E=34
+    V-1->V
+    Text(10,10,"         "
+    Goto 2
+End
+While E=105
+    Goto R
+End
+U+1->U
+Goto 2
+Lbl R
+N+H->N
+M+V->M
+Pt-On(N,M,3
+For(A,1,200
+End
+abs(N)+abs(M)->N
+ClrHome
+Disp "Votre score :",60-N

@@ -1,0 +1,265 @@
+0->D:0->F:0->H
+Disp "Σ+
+ClrHome
+Lbl 1
+Input "NB REACTIF :",A
+Input "NB PROD :",B
+While A=0 or B=0 or A>3 or B>3 or A=1
+    Goto 1
+End
+ClrHome
+Disp "REACTIF 1"
+Input "NOM :",Str1
+Input "COEFF :",C
+Input "N :",D
+ClrHome
+While A>1
+    Disp "REACTIF 2"
+    Input "NOM :",Str2
+    Input "COEFF :",E
+    Input "N :",F
+    ClrHome
+    Goto 2
+End
+Lbl 2
+While A>2
+    Disp "REACTIF 3"
+    Input "NOM :",Str3
+    Input "COEFF :",G
+    Input "N :",H
+    ClrHome
+    Goto 5
+End
+Lbl 5
+Disp "PROD 1 :"
+Input "NOM :",Str4
+Input "COEFF :",I
+ClrHome
+While B>1
+    Disp "PROD 2 :"
+    Input "NOM :",Str5
+    Input "COEFF :",J
+    ClrHome
+    Goto 3
+End
+Lbl 3
+While B>2
+    Disp "PROD 3 :"
+    Input "NOM :",Str6
+    Input "COEFF :",K
+    ClrHome
+    Goto 4
+End
+Lbl 4
+DelVar ʟTA
+ClrDraw
+AxesOff
+0->Xmin
+0->Ymin
+94->Xmax
+62->Ymax
+Horizontal 0
+Horizontal 62
+Vertical 0
+Vertical 94
+Vertical 47
+Horizontal 55
+While A=2
+    Vertical 23
+    Goto 94
+End
+While A=3
+    Vertical 15
+    Vertical 30
+    Goto 94
+End
+Lbl 94
+While B=2
+    Vertical 70
+    Goto 95
+End
+While B=3
+    Vertical 62
+    Vertical 78
+    Goto 95
+End
+Lbl 95
+Text(1,7,"REACTIFS"
+Text(1,55,"PRODUITS"
+Text(16,2,C
+Text(8,2,Str1
+Text(24,2,D
+While A=2
+    Text(8,25,Str2
+    Text(16,25,E
+    Text(24,25,F
+    Y+42->X
+    Goto 96
+End
+While A=3
+    Text(8,17,Str2
+    Text(16,17,E
+    Text(24,17,F
+    Text(8,32,Str3
+    Text(16,32,G
+    Text(24,32,H
+    H/G->X
+    Goto 96
+End
+Lbl 96
+D/C->Z
+F/E->Y
+{Z,Y,X}->ʟTA
+min(ʟTA)->W
+W*100->W
+iPart(W)->W
+W/100->W
+Text(32,2,D-W*C
+While A=2
+    Text(32,25,F-W*E
+    Goto 97
+End
+While A=3
+    Text(32,17,F-E*W
+    Text(32,32,H-G*W
+    Goto 97
+End
+Lbl 97
+While B=1
+    Text(8,68,Str4
+    Text(16,68,I
+    Text(32,68,I*W
+    Text(24,68,"0"
+    Goto 98
+End
+While B=2
+    Text(8,49,Str4
+    Text(8,72,Str5
+    Text(16,49,I
+    Text(16,72,J
+    Text(32,49,I*W
+    Text(32,72,J*W
+    Text(24,49,"0"
+    Text(24,72,"0"
+    Goto 98
+End
+While B=3
+    Text(8,49,Str4
+    Text(8,64,Str5
+    Text(8,80,Str6
+    Text(16,49,I
+    Text(16,64,J
+    Text(16,80,K
+    Text(24,49,"0"
+    Text(24,64,"0"
+    Text(24,80,"0"
+    Text(32,49,I*W
+    Text(32,64,J*W
+    Text(32,80,K*W
+    Goto 98
+End
+Lbl 98
+Horizontal 23
+Horizontal 47
+Horizontal 39
+Horizontal 31
+Line(15,1,15,22,0
+Line(30,1,30,22,0
+Line(23,1,23,22,0
+Line(47,1,47,22,0
+Line(62,1,62,22,0
+Line(78,1,78,22,0
+Line(70,1,70,22,0
+Text(40,2,"X (MAX) :"
+Text(40,30,W
+Text(47,2,"REAC   LIM :"
+While A=2
+    If D-C*W=F-E*W
+    Then
+        Text(47,41,"STOECHIOMET"
+    Else
+        If D-C*W>F-E*W
+        Then
+            Text(47,41,Str2
+        Else
+            Text(47,41,Str1
+        End
+    End
+    Goto 99
+End
+While A=3
+    If D-C*W=F-E*W and F-E*W=H-G*W
+    Then
+        Text(47,41,"STOCHIOMET"
+    Else
+        If D-C*W>F-E*W and H-G*W>F-E*W
+        Then
+            Text(47,41,Str2
+        Else
+            If F-E*W>D-C*W and H-G*W>D-C*W
+            Then
+                Text(47,41,Str1
+            Else
+                Text(47,41,Str3
+            End
+        End
+    End
+    Goto 99
+End
+Lbl 99
+StorePic 9
+Pause 
+ClrDraw
+AxesOn
+I*W->I
+J*W->J
+K*W->K
+{D,F,H,I,J,K}->ʟTA
+(max(ʟTA)+max(ʟTA)/4)->P
+P->Ymax
+W+W/4->Q
+Q->Xmax
+Q/8->Xscl
+P/15->Yscl
+Text(49,86,iPart(Q
+Text(56,81,"X(M)
+Text(1,4,iPart(P
+Text(1,17,"N (MOL)
+Line(0,D,W,D-C*W
+Line(0,F,W,F-E*W
+While A=3
+    Line(0,H,W,H-G*W
+    Goto E
+End
+Lbl E
+While B=1
+    0->J:0->K
+    Goto F
+End
+While B=2
+    0->K
+    Goto F
+End
+Lbl F
+Line(0,0,W,I
+Line(0,0,W,J
+Line(0,0,W,K
+StorePic 8
+Pause 
+Lbl 67
+ClrDraw
+AxesOn
+Menu("MENU :","GRAPH",65,"TABLEAU",66,"QUIT",56
+Lbl 65
+RecallPic 8
+Pause 
+Goto 67
+Lbl 66
+AxesOff
+RecallPic 9
+Pause 
+Goto 67
+Lbl 56
+DelVar Pic9
+DelVar Pic8
+ZStandard

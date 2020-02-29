@@ -1,0 +1,37 @@
+ClrHome
+Disp "FORM : P.V=N.R.T","","PRESS (PASCAL)","VOLUME (M³)","N (MOLE)","R=8.314","T°C (KELVIN)"
+Output(8,1,"   PUSH ENTER    "
+Pause 
+ClrHome
+Fix 2
+Sci
+8.314->R
+Menu("KOI TU VEUX ?","PRESSION",1,"VOLUME",2,"NB MOL",3,"KELVIN",4)
+Lbl 1
+Input "NB MOL ?",N
+Input "KELVIN ?",T
+Input "VOLUME ?",V
+(N*R*T)/V->P
+Disp "PRESS (PASCAL) :",P
+Stop
+Lbl 3
+Input "PRESSION ?",P
+Input "VOLUME ?",V
+Input "KELVIN ?",T
+(P*V)/(T*R)->N
+Disp "NB MOL =",N
+Stop
+Lbl 2
+Input "PRESSION ?",P
+Input "NB MOL ?",N
+Input "KELVIN ?",T
+(N*R*T)/P->V
+Disp "VOLUME (M³) :",V
+Stop
+Lbl 4
+Input "PRESSION ?",P
+Input "VOLUME ?",V
+Input "NB MOL ?",N
+(P*V)/N/R->T
+Disp "T°C (KELVIN) :",T
+Stop

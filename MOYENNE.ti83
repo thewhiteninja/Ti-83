@@ -1,0 +1,39 @@
+Fix 2
+666->Q
+1->A
+0->R:0->E
+ClrHome
+Disp "METTEZ Q COMME","NOTE POUR FINIR"
+Pause 
+Lbl 1
+Input "NOTE :",B
+While B=666
+    R/E->M
+    ClrHome
+    Disp "LA MOYENNE EST :",M
+    Pause 
+    Goto F
+End
+E+1->E
+B+R->R
+Goto 1
+End
+Lbl F
+ClrHome
+While M<=5
+    Disp "T ES NUL, RETOUR","NE AU CP !!"
+    Stop
+End
+While M<=10
+    Disp "FAIT UN EFFORT, ","TU PEUS PASSER","LA MOYENNE !"
+    Stop
+End
+While M<=15
+    Disp "C EST BIEN, CONT","INUE !"
+    Stop
+End
+While M<=20
+    Disp "EXELLENT !!!"
+    Pause 
+    Stop
+End

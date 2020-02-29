@@ -1,0 +1,85 @@
+DelVar [D]
+0->Z:0->Y:0->X
+0->Xmin
+0->Ymin
+94->Xmax
+62->Ymax
+AxesOff
+FnOff 
+Lbl M
+ClrDraw
+Text(20,83,"N &square; :"
+Line(15,60,75,60
+Line(75,60,75,0
+Line(75,0,15,0
+Line(15,0,15,60
+Line(15,20,75,20
+Line(15,40,75,40
+Line(35,0,35,60
+Line(55,0,55,60
+1->J:45->A:30->B
+{3,3}->dim([D]
+Lbl 1
+1->X
+prgmMORP2
+Text(27,85,J
+Pt-On(A,B,2
+getKey->K
+While K=105 or K=24 or K=25 or K=26 or K=34
+    Pt-Off(A,B,2
+    While K=25
+        B+20->B
+        While B>50
+            B-20->B
+            Goto 1
+        End
+        Goto 1
+    End
+    While K=24
+        A-20->A
+        While A<25
+            A+20->A
+            Goto 1
+        End
+        Goto 1
+    End
+    While K=26
+        A+20->A
+        While A>65
+            A-20->A
+            Goto 1
+        End
+        Goto 1
+    End
+    While K=34
+        B-20->B
+        While B<10
+            B+20->B
+            Goto 1
+        End
+        Goto 1
+    End
+    While K=105
+        2->X:2->θ
+        If J=1
+        Then
+            prgmMORP2
+            While θ=1
+                Goto 1
+            End
+            2->J
+            Line(A,B+4,A,B-4
+            Line(A-4,B,A+4,B
+            Goto 1
+        Else
+            prgmMORP2
+            While θ=1
+                Goto 1
+            End
+            1->J
+            Circle(A,B,6
+            Goto 1
+        End
+    End
+End
+Goto 1

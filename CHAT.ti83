@@ -1,0 +1,21 @@
+Menu("MENU :","ENVOYEUR",E,"RECEPTEURS",R
+Lbl R
+""->Str1
+0->B:0->C
+Get(A
+A->B
+Lbl 1
+Get(A
+While A!=B
+    Get(Str1
+    Disp Str1
+    A->B
+    Goto 1
+End
+Goto 1
+Lbl E
+0->A
+Lbl 2
+Input Str1
+A+1->A
+Goto 2

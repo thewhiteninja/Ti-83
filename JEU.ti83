@@ -1,0 +1,140 @@
+prgmPRESENT2
+Clear Entries
+Fix 0
+Normal
+0->I:0->F:0->L:10->E:0->C:1000->D
+Lbl M
+ClrHome
+Menu("Menu :","Jouer",2,"Options",3,"Record",4,"Reset",R,"Quitter",5
+Lbl R
+DelVar Str9
+{1,1}->dim([A]
+0->[A](1,1
+""->Str9
+1->C
+1000->D
+Goto M
+Lbl 3
+Menu("Options :","Ecart",6,"Essais",7)
+Lbl 6
+Input "Nb min ?",C
+Input "Nb max ?",D
+Goto M
+Lbl 7
+Input "Nb essais ?",E
+Goto M
+Lbl 2
+randInt(C,D)->A
+Lbl 1
+While F>=E
+    ClrHome
+    Output(1,6,"Perdu"
+    Output(4,1,"La reponse est :"
+    Disp "","","","","",A
+    Pause 
+    0->F
+    Goto M
+End
+Input "Nombre ?",B
+While B=3118
+    Goto G
+End
+While B=A
+    F+1->F
+    ClrHome
+    For(H,1,2
+        For(G,1,20
+            Output(4,5,"Gagné !!"
+        End
+        For(G,1,20
+            Output(4,5,"        "
+        End
+    End
+    ((D-C)/F)->I
+    ClrHome
+    Output(4,3,"Score : "
+    Output(4,11,I
+    Pause 
+    While I>[A](1,1)
+        I->[A](1,1)
+        ClrHome
+        Lbl H
+        ClrHome
+        Disp "Max 5 lettres !!"
+        Input "Nom ? ",Str9
+        length(Str9)->G
+        While G>5
+            Goto H
+        End
+        0->F
+        Goto M
+    End
+    0->F
+    Goto M
+End
+While B>A
+    F+1->F
+    Disp "Trop grand",F
+    Goto 1
+End
+While B<A
+    F+1->F
+    Disp "Trop petit",F
+    Goto 1
+End
+Lbl 5
+ClrDraw
+AxesOn
+ExprOn
+CoordOn
+ZStandard
+ClrHome
+Stop
+Lbl 4
+ClrHome
+Output(1,1,"Record :"
+If [A](1,1)>0
+Then
+    Output(3,12,[A](1,1)
+    Output(3,7,"avec"
+    Output(3,1,Str9
+Else
+    Output(4,2,"Pas de records"
+End
+Pause 
+Goto M
+Lbl G
+ClrHome
+1->A:1->B
+Menu("MENU","ENCRYPT",W,"DECRYPT",X,"QUIT",5)
+Lbl W
+randInt(2,1000)->P
+For(A,1,13
+    For(B,1,33
+        If [A](A,B)=1
+        Then
+            randInt(P,1000)->C
+            [A](A,B)+C->[A](A,B)
+        Else
+            randInt(1,P)->C
+            [A](A,B)+C->[A](A,B
+        End
+    End
+End
+Disp "VOTRE CLE : ",P
+Pause 
+DelVar P
+ClrHome
+Stop
+Lbl X
+Input "CLE ?",P
+For(A,1,13
+    For(B,1,33
+        If [A](A,B)>=P
+        Then
+            1->[A](A,B)
+        Else
+            0->[A](A,B)
+        End
+    End
+End

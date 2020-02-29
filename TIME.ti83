@@ -1,0 +1,69 @@
+prgmPRESENT
+Lbl 99
+0->θ
+Menu("Menu :","Normal",N,"Rebours",M,"Quitter",Q
+Lbl Q
+ClrHome
+Stop
+Lbl M
+11->θ
+Lbl N
+ClrHome
+Input "Heure ?",A
+Input "Minute ? ",B
+Input "Seconde ? ",C
+ClrHome
+Output(4,5,"h"
+Output(4,9,"m"
+Output(4,14,"s"
+While θ=11
+    Goto 9
+End
+Lbl 1
+getKey->O
+If O=0
+Then
+Else
+    Goto 99
+End
+While C=60
+    Output(4,12,"  "
+    0->C
+    B+1->B
+End
+While B=60
+    Output(4,7,"  "
+    0->B
+    A+1->A
+End
+Output(4,3,A
+Output(4,7,B
+Output(4,12,C
+For(D,1,349
+End
+C+1->C
+Goto 1
+Lbl 9
+While A=0 and B=0 and C=0
+    ClrHome
+    Output(4,3,"C est fini !!"
+    Stop
+End
+While C=_-1
+    59->C
+    B-1->B
+End
+While B=_-1
+    59->B
+    A-1->A
+End
+Output(4,3,"  "
+Output(4,7,"  "
+Output(4,12,"  "
+Output(4,3,A
+Output(4,7,B
+Output(4,12,C
+For(E,1,349
+End
+C-1->C
+Goto 9

@@ -1,0 +1,45 @@
+Float
+AxesOn
+Lbl 1
+ClrHome
+Input "EQUA=",Str7
+Prompt A,B,C
+(B²-4AC)->D
+ClrHome
+Output(1,1,"B²-4AC="
+Output(1,8,D
+Output(1,14,"D 0"
+If D=0
+Then
+    Disp "","","","",_-B/(2A)
+    Output(1,15,"="
+    Output(3,1,"  1 SOLUTION :  "
+    Output(5,1,"_-B/(2A)="
+    Goto M
+End
+If D>0
+Then
+    Fix 5
+    (_-B+sqrt(D))/(2A)->F
+    (_-B-sqrt(D))/(2A)->G
+    Disp "","","","",F>Frac,"",G>Frac
+    Output(1,15,">"
+    Output(3,1,"  2 SOLUTIONS:  "
+    Output(5,1,"_-B-sqrt(D)/2A="
+    Output(7,1,"_-B+sqrt(D)/2A="
+    Goto M
+End
+If D<0
+Then
+    Output(1,15,"<"
+    Output(3,1,"PAS DE SOLUTIONS"
+    Goto M
+End
+Lbl M
+Pause 
+Menu("MENU:","RECOMMENCER",1,"VOIR GRAPH",3,"QUITTER",2
+Lbl 3
+String>Equ(Str7,Y1
+DispGraph
+Goto M
+Lbl 2

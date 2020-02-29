@@ -1,0 +1,22 @@
+FnOff 
+AxesOff
+ZStandard
+Horizontal _-10
+Vertical 10
+Horizontal 10
+Vertical _-10
+Line(_-9.4,9,9.4,9
+Line(9.4,9,9.4,_-9
+Line(9.4,_-9,_-9.4,_-9
+Line(_-9.4,_-9,_-9.4,9
+Text(9,25,"UN PROGRAMME"
+Text(17,44,"DE"
+Text(25,23,Str8
+Text(52,10,"COPYRIGHT 2001 _- 2002"
+Line(_-9.4,_-6.45,9.4,_-6.45
+Text(43,23,"APPUYEZ ENTER"
+Line(_-7.6,_-6.45,_-5.53,_-3.21
+Line(_-5.53,_-3.22,5.31,_-3.22
+Line(5.31,_-3.22,7.4,_-6.45
+Pause 
+Return

@@ -1,0 +1,34 @@
+60->I
+FnOff 
+AxesOff
+ZStandard
+Horizontal _-10
+Vertical 10
+Horizontal 10
+Vertical _-10
+Text(7,22,"Un   programme"
+Text(16,44,"de"
+Text(25,23,"WHITE    Ninja"
+Text(53,12,"Copyright 2001 _- 2002"
+Horizontal _-9.67
+Vertical 9.78
+Horizontal 9.67
+Vertical _-9.78
+Horizontal _-6.45
+Horizontal _-6
+Line(_-5.5,_-0.4,5.1,_-0.4
+Line(_-1.06,2.58,1.27,2.58)
+Line(_-5.95,5.5,5.74,5.5)
+For(I,1,2
+    For(P,1,3
+        Text(40,23,"                                                     "
+    End
+    For(P,1,3
+        Text(40,23,"appuyez enter"
+    End
+End
+Pause 
+ClrHome
+DelVar I
+DelVar P
+Return

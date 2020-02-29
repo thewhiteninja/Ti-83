@@ -1,0 +1,19 @@
+Menu("CRYPT2","ENCRYPT",F,"DECRYPT",G)
+Lbl F
+randInt(500,8000)->P
+For(A,1,13
+    For(B,1,33
+        [A](A,B)+P->[A](A,B
+    End
+End
+Disp "CLE 2 ",P
+Pause 
+DelVar P
+Stop
+Lbl G
+Input "LA CLE 2 ",P
+For(A,1,13
+    For(B,1,33
+        [A](A,B)-P->[A](A,B)
+    End
+End

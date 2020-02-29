@@ -1,0 +1,98 @@
+0->Xmin
+0->Ymin
+94->Xmax
+62->Ymax
+Input "Password ? ",C
+ClrHome
+If C=3118
+Then
+    Output(4,1,"Bonjour XXXXX !!"
+    For(V,1,300
+    End
+    Goto S
+Else
+    Output(4,1,"Bonjour xxxxx"
+    For(V,1,300
+    End
+    ClrHome
+    Menu("Menu:","Afficher",1,"Quitter",U
+    Lbl S
+    1->A:1->B
+    ClrHome
+    Menu("Menu:","Ecrire",L,"Save",2,"Afficher",1,"Options",J,"Quitter",U
+    Lbl U
+    ClrDraw
+    ZStandard
+    ClrHome
+    Stop
+    Lbl L
+    ClrDraw
+    Text(5,40,"<<  Ici"
+    DispGraph
+    Stop
+    Lbl 1
+    ClrDraw
+    While [A](A,B)>1
+        ClrHome
+        Disp "Cette matrice","est crypte !!"
+        Stop
+    End
+    For(A,1,13
+        For(B,1,33
+            If [A](A,B)=1
+            Then
+                Pt-On(A,B,1)
+            Else
+            End
+        End
+    End
+    Stop
+    Lbl 2
+    DelVar [A]
+    {13,33}->dim([A]
+    For(A,1,13
+        For(B,1,33
+            If pxl-Test(A,B)=1
+            Then
+                1->[A](A,B)
+            End
+        End
+    End
+    Menu("Crypter ?","Oui",J,"Non",Z
+    Lbl Z
+    Stop
+    Lbl J
+    Menu("Options:","Encrypt",W,"Decrypt",X,"Retour",S)
+    Lbl W
+    randInt(2,1000)->P
+    For(A,1,13
+        For(B,1,33
+            If [A](A,B)=1
+            Then
+                randInt(P,1000)->C
+                [A](A,B)+C->[A](A,B)
+            Else
+                randInt(1,P)->C
+                [A](A,B)+C->[A](A,B
+            End
+        End
+    End
+    Disp "Votre cle :",P
+    Pause 
+    DelVar P
+    ClrHome
+    Stop
+    Lbl X
+    Input "La cle :",P
+    For(A,1,13
+        For(B,1,33
+            If [A](A,B)>=P
+            Then
+                1->[A](A,B)
+            Else
+                0->[A](A,B)
+            End
+        End
+    End
+    Lbl 5
+Stop
